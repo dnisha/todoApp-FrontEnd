@@ -34,6 +34,8 @@ function post(props) {
             (apiResponse) => {
                 console.log(apiResponse)
                 // props.rerender()
+                enbleEdit()
+                
             });
     };
     const enbleEdit = () => {
