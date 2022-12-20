@@ -10,7 +10,8 @@ import { callApi } from "../service/HttpService";
 function Card(props) {
     const [post, setPost] = useState([]);
     const addList = async (event) => {
-        await callApi("Get", "", 'http://localhost:8080/v1/todo/allPost').then(
+        console.log('base url '+process.env.API_BASE_URL)
+        await callApi("Get", "", `${process.env.API_BASE_URL}/v1/todo/allPost`).then(
             (apiResponse) => {
                 setPost(apiResponse.response)
                 // console.log(apiResponse.response)

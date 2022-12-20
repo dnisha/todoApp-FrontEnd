@@ -17,7 +17,7 @@ function createPost(props) {
     const addList = async (event) => {
         console.log('value is:', text);
         const body = { content: text }
-        await callApi("Post", body, 'http://localhost:8080/v1/todo/posts').then(
+        await callApi("Post", body, `${process.env.API_BASE_URL}/v1/todo/posts`).then(
             (apiResponse) => {
                 setText(apiResponse.response)
                 // console.log(apiResponse.response)

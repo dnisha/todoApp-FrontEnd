@@ -20,7 +20,7 @@ function post(props) {
 
     const deletePost = async (id) => {
         console.log('delete post of id: ', id);
-        await callApi("Get", "", `http://localhost:8080/v1/todo/post/${id}`).then(
+        await callApi("Get", "", `${process.env.API_BASE_URL}/v1/todo/post/${id}`).then(
             (apiResponse) => {
                 // console.log(apiResponse)
                 props.rerender()
@@ -30,7 +30,7 @@ function post(props) {
     const editPostRequest = async (id) => {
         console.log('edit post of id: ', id);
         const body = { content: text }
-        await callApi("Put", body, `http://localhost:8080/v1/todo/post/${id}`).then(
+        await callApi("Put", body, `${process.env.API_BASE_URL}/v1/todo/post/${id}`).then(
             (apiResponse) => {
                 console.log(apiResponse)
                 // props.rerender()
