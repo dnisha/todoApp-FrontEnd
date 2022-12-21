@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import Grid from '@mui/material/Grid';
 import TextField from '@material-ui/core/TextField';
 import CheckIcon from '@mui/icons-material/Check';
@@ -7,8 +7,8 @@ import BorderColorOutlinedIcon from '@mui/icons-material/BorderColorOutlined';
 import DeleteOutlineOutlinedIcon from '@mui/icons-material/DeleteOutlineOutlined';
 import { callApi } from "../service/HttpService";
 
-function post(props) {
-    const [text, setText] = useState(props.post.content);
+function Post(props) {
+    const [text, setText] = useState(props.postData.content);
     const [color, setColor] = useState("secondary");
     const [bool, setBool] = useState(false);
 
@@ -69,17 +69,17 @@ function post(props) {
             </Grid>
             <Grid item xs={4}>
                 <IconButton>
-                    <CheckIcon fontSize="medium" color='success' id={props.post.uuid} onClick={() => editPostRequest(props.post.uuid)}></CheckIcon>
+                    <CheckIcon fontSize="medium" color='success' id={props.postData.uuid} onClick={() => editPostRequest(props.postData.uuid)}></CheckIcon>
                 </IconButton>
                 <IconButton>
-                    <BorderColorOutlinedIcon fontSize="medium" color='primary' id={props.post.uuid} onClick={enbleEdit}></BorderColorOutlinedIcon>
+                    <BorderColorOutlinedIcon fontSize="medium" color='primary' id={props.postData.uuid} onClick={enbleEdit}></BorderColorOutlinedIcon>
                 </IconButton>
                 <IconButton>
-                    <DeleteOutlineOutlinedIcon fontSize="medium" style={{ color: "red" }} id={props.post.uuid} onClick={() => deleteList(props.post.uuid)}></DeleteOutlineOutlinedIcon>
+                    <DeleteOutlineOutlinedIcon fontSize="medium" style={{ color: "red" }} id={props.postData.uuid} onClick={() => deleteList(props.postData.uuid)}></DeleteOutlineOutlinedIcon>
                 </IconButton>
             </Grid>
         </>
     );
 }
 
-export default post;
+export default Post;

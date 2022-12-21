@@ -1,7 +1,7 @@
 import React from 'react';
 import Card from '../../../components/Card'
 
-function posts(props) {
+function Posts(props) {
     return (
       <>
       <Card></Card>
@@ -9,4 +9,4 @@ function posts(props) {
     );
 }
 
-export default posts;
+export default Posts;

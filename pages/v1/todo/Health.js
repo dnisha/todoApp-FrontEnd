@@ -1,6 +1,6 @@
 import React from 'react';
 
-function health(props) {
+function Health(props) {
     return (
         <div>
             Health Check
@@ -8,4 +8,4 @@ function health(props) {
     );
 }
 
-export default health;
+export default Health;

@@ -2,8 +2,8 @@ import Grid from '@mui/material/Grid';
 import Paper from '@mui/material/Paper';
 import Box from '@mui/material/Box';
 import { Typography } from '@mui/material';
-import Post from '../components/post'
-import CreatePost from '../components/createPost'
+import Post from './Post'
+import CreatePost from './CreatePost'
 import React, { useState, useEffect } from 'react';
 import { callApi } from "../service/HttpService";
 
@@ -21,7 +21,7 @@ function Card(props) {
     useEffect(() => {
         console.log("card content " + post)
         addList()
-    }, []);
+    });
 
 
     return (
@@ -47,7 +47,7 @@ function Card(props) {
                             post.map((p) => {
                                 return (
 
-                                    <Post post={p} key={p.uuid} rerender= {addList}></Post>
+                                    <Post postData={p} key={p.uuid} rerender= {addList}></Post>
                                 )
                             })
                         }

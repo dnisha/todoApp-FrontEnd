@@ -6,7 +6,7 @@ import Button from '@material-ui/core/Button';
 import { callApi } from "../service/HttpService";
 
 
-function createPost(props) {
+function CreatePost(props) {
     const [text, setText] = useState("");
 
     const createList = event => {
@@ -46,4 +46,4 @@ function createPost(props) {
     );
 }
 
-export default createPost;
+export default CreatePost;
