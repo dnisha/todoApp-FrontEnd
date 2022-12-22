@@ -21,7 +21,7 @@ function Card(props) {
     useEffect(() => {
         console.log("card content " + post)
         addList()
-    });
+    },[]);
 
 
     return (

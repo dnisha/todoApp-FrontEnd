@@ -2,10 +2,10 @@ FROM node:16-alpine AS BUILD_IMAGE
 RUN mkdir -p /usr/app/
 WORKDIR /usr/app/
 COPY ./ ./
-RUN npm install
+RUN npm install --force
 RUN npm run build
 RUN rm -rf node_modules
-RUN npm install --production
+RUN npm install --production --force
 
 
 FROM node:16-alpine 
