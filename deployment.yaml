@@ -1,0 +1,36 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: next-todo-k8s
+  labels:
+    name: next-todo-k8s
+spec:
+  ports:
+    - nodePort: 30164
+      port: 3000
+      targetPort: 3000
+      protocol: TCP
+  selector:
+    app: next-todo-k8s
+  type: NodePort
+
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: next-todo-k8s
+spec:
+  selector:
+    matchLabels:
+      app: next-todo-k8s
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: next-todo-k8s
+    spec:
+      containers:
+        - name: next-todo-k8s
+          image: dash04/todo-frontend:v4
+          ports:
+            - containerPort: 3000
